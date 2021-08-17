@@ -1,0 +1,16 @@
+{
+  "name": "cypressbasic",
+  "version": "1.0.0",
+  "description": "simple cypress exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cyopen": "node_modules\\.bin\\cypress open",
+    "cyrun": "node_modules\\.bin\\cypress run"
+  },
+  "author": "MrWhoBird",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.2.0"
+  }
+}
