@@ -28,21 +28,21 @@ describe('My Second Test Suite', function(){
     cy.get('#displayed-text').should('be.visible')
     
     //radio buttons
-    
     cy.get('[value="radio2"]').check().should('be.checked')
 
     cy.get('#alertbtn').click()
     cy.get('#confirmbtn').click()
 
+    //alerts
     cy.on("window:alert", str => expect(str).to.be.equal("Hello , share this practice page and share your knowledge"))
     cy.on("window:confirm", str => expect(str).to.be.equal("Hello , Are you sure you want to confirm?"))
 
+    //child element new tab
     cy.get('#opentab').invoke('removeAttr','target').click()
-    
     cy.url().should('include','shettyacademy')
-
     cy.go('back')
 
+    //tables
     cy.get('tr td:nth-child(2)').each((el, index) => {
  
       const text = el.text()
@@ -56,6 +56,11 @@ describe('My Second Test Suite', function(){
       ) : true
    
   })
+
+  //mouse hover
+  cy.get("div.mouse-hover-content").invoke("show")
+  cy.contains("Top").click({force:true})
+  cy.url().should('include','top')
 
   })
 })
