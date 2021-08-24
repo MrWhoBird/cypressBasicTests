@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
  
-describe('My Second Test Suite', function(){
-  it('My FirstTest case', function() {
+describe('Testing sandbox', function(){
+  it('Test website elements', function() {
     
     //Check boxes
     cy.visit("https://qaclickacademy.com/practice.php/")
@@ -10,13 +10,12 @@ describe('My Second Test Suite', function(){
     cy.get('input[type="checkbox"]').check(['option2','option3'])
     
     //Static Dropdown
-    
     cy.get('select').select('option2').should('have.value','option2')
     
     //Dynamic dropdowns
     cy.get('#autocomplete').type('ind')
+    cy.get('.ui-menu-item div').each(e1 => e1.text()==="India" ? e1.trigger('click') : true)
     
-    cy.get('.ui-menu-item div').each($e1 => $e1.text()==="India" ? $e1.trigger('click') : true)
     //autocomplete
     cy.get('#autocomplete').should('have.value','India')
 
@@ -29,7 +28,6 @@ describe('My Second Test Suite', function(){
     
     //radio buttons
     cy.get('[value="radio2"]').check().should('be.checked')
-
     cy.get('#alertbtn').click()
     cy.get('#confirmbtn').click()
 
@@ -44,7 +42,6 @@ describe('My Second Test Suite', function(){
 
     //tables
     cy.get('tr td:nth-child(2)').each((el, index) => {
- 
       const text = el.text()
       text.includes("Python") ? 
       (
