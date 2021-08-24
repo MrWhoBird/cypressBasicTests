@@ -1,10 +1,7 @@
 /// <reference types="cypress" />
 
-
-
 describe('Logging In - Single Sign on', function () {
 
-  
     it('can authenticate with cy.request', function () {
 
       cy.visit("http://localhost:7074/dashboard")
@@ -27,19 +24,9 @@ describe('Logging In - Single Sign on', function () {
       }
 
       cy.request(options)
-      //Cypress runs your test on browser
-  //SSO - email password //ca -> redirect to 
       cy.visit("http://localhost:7074/dashboard")
       cy.get('h1').should('contain',"Welcome to the Dashboard")
 
-
-
-
-
-
-    
-
-      
   })
 
 });
