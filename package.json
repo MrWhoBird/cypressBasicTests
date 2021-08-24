@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Login when authentication is done on a 3rd party server",
   "scripts": {
-    "cypress:open": "node_modules/.bin/cypress open",
-    "dev": "node_modules/.bin/start-test 7074 cypress:open",
-    "start": "node app_server.js --port 7074 & node auth_server.js --port 7075"
+    "cyopen": "node_modules\\.bin\\cypress open",
+    "dev": "node_modules\\.bin\\start-test 7074 cypress:open",
+    "start74": "node app_server.js --port 7074",
+    "start75": "node auth_server.js --port 7075"
   
   },
 
